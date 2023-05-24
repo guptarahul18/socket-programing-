@@ -1,18 +1,3 @@
 # socket-programing-
-import socket
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-host = socket.gethostbyname('192.168.23.111')
-port = 7634
-print(socket.gethostname())
-s.bind((host, port))
-s.listen(5)
-
-con, addr = s.accept()
-print("connected with", addr)
-while True:
-    messg = input("send message to client: ")
-    con.send(messg.encode())
-    print("waiting for response")
-    c_messg = con.recv(1024)
-    print("message from client: ", c_messg.decode())
+What is socket programming?
+Socket programming is a way of connecting two nodes on a network to communicate with each other. One socket(node) listens on a particular port at an IP, while the other socket reaches out to the other to form a connection. The server forms the listener socket while the client reaches out to the server.
